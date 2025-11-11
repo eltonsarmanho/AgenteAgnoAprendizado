@@ -7,7 +7,7 @@ WORKDIR /app
 
 # Instala as dependências em um local separado para facilitar a cópia
 RUN pip install --upgrade pip
-COPY requirements.txt .
+COPY DashboardWordGen/requirements.txt .
 # --wheel-dir cria "wheels" pré-compilados, otimizando a instalação no próximo estágio.
 RUN pip wheel --no-cache-dir --wheel-dir /app/wheels -r requirements.txt
 
@@ -31,7 +31,7 @@ RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 
 # Copia todo o restante do código da aplicação para o contêiner.
 # Copiamos o código APÓS instalar as dependências para aproveitar o cache do Docker.
-COPY . .
+COPY DashboardWordGen/ ./DashboardWordGen/
 
 # Cria um usuário não-root para executar a aplicação. É uma prática de segurança crucial.
 RUN useradd --create-home appuser
@@ -48,4 +48,4 @@ HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
   CMD curl --fail http://localhost:8501/_stcore/health || exit 1
 
 # Comando para iniciar a aplicação.
-CMD ["streamlit", "run", "Dashboard/app.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.headless=true","--server.enableCORS=false"]
+CMD ["streamlit", "run", "DashboardWordGen/Dashboard/app.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.headless=true","--server.enableCORS=false"]

@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  word-gen-dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./DashboardWordGen/Dashboard:/app/DashboardWordGen/Dashboard
+      - ./DashboardWordGen/requirements.txt:/app/DashboardWordGen/requirements.txt
+    restart: always
+    environment:
+      - STREAMLIT_LOGGER_LEVEL=debug
