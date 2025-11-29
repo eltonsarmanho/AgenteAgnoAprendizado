@@ -1,0 +1,32 @@
+
+# ambiente files are not allowed
+*.env
+
+*.venv
+
+*.env 
+
+*.venv  
+# virtual environment folders
+venv/
+env/
+.virtualenv/
+.venv/
+.env/   
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class      
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/      
+
+*.db
+\lancedb
+*.env
