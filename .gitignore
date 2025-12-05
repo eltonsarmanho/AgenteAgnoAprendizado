@@ -1,0 +1,28 @@
+\.env
+\.venv
+
+*.m4a
+*.wav
+*.mp3
+*.flac
+*.aac
+*.ogg
+*.wma
+*.aiff
+*.aif   
+
+# Ignore audio processing temporary files
+*.tmp
+*.temp      
+*.log
+*.cache 
+# Ignore audio transcription outputs
+transcriptions/
+transcripts/    
+
+.env.local  
+.env.development.local
+.env.test.local
+.env.production.local
+.env.staging.local
+.env        
