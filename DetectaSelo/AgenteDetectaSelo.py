@@ -13,7 +13,7 @@ agent = Agent(
     markdown=True,
 )
 
-file_path = Path(__file__).parent.joinpath("Escritura2.pdf")
+file_path = Path(__file__).parent.joinpath("Escritura1.pdf")
 print(file_path)
 
 # Opção 1: Usar filepath diretamente (recomendado - o agno detecta o mime_type automaticamente)
