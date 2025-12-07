@@ -1,0 +1,7 @@
+agno
+openai
+google-genai
+sqlalchemy 
+psycopg 
+pgvector 
+sentence-transformers 
