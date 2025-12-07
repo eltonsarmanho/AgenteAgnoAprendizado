@@ -26,3 +26,6 @@ transcripts/
 .env.production.local
 .env.staging.local
 .env        
+
+
+*.pdf
