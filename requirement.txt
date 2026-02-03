@@ -6,3 +6,4 @@ psycopg
 pgvector 
 sentence-transformers 
 ddgs
+fastapi
