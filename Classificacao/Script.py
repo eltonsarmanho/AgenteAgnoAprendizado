@@ -36,6 +36,9 @@ def extrair_exercicios_videos(arquivo_excel, arquivo_saida='exercicios_videos.cs
                 # Remover linhas com valores nulos em ambas as colunas
                 df_filtrado = df_filtrado.dropna(subset=['Exercício', 'Vídeo'], how='all')
                 
+                # Marcar se veio da aba de alongamentos
+                df_filtrado['alongamento'] = 1 if 'Alongamentos' in aba else 0
+                
                 # Adicionar à lista
                 dados_completos.append(df_filtrado)
             else:

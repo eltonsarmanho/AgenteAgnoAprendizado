@@ -114,8 +114,11 @@ def categorizar_exercicios(arquivo_entrada='exercicios_videos.csv', arquivo_said
         # Criar DataFrame com resultado
         df_categorizado = pd.DataFrame(categorias)
         
+        # Adicionar coluna alongamento (1 se exercício contém "Alongamento" no nome, 0 caso contrário)
+        df_categorizado['alongamento'] = df_categorizado['Exercício'].str.contains('Alongamento', case=False, na=False).astype(int)
+        
         # Reordenar colunas
-        df_categorizado = df_categorizado[['Exercício', 'Categoria', 'Vídeo']]
+        df_categorizado = df_categorizado[['Exercício', 'Categoria', 'Vídeo', 'alongamento']]
         
         # Salvar como CSV
         df_categorizado.to_csv(arquivo_saida, index=False, encoding='utf-8-sig')
