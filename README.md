@@ -2,6 +2,7 @@
 
 ## 🎯 Objetivo
 
+
 Consultar, visualizar e exportar **pares pergunta/resposta** salvos no banco SQLite do RagSQLITEGemini.
 
 **Antes:** ❌ Apenas respostas visíveis  
